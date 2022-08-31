@@ -10,6 +10,10 @@ const connect = function () {
   conn.on('data', (data) =>{
     console.log('data from server  ', data);
   });
+  conn.on('connect',()=>{
+    conn.write('Name: EES')
+    console.log("Successfully connected to the server")
+  })
   conn.setEncoding("utf8");
   return conn;
 };
