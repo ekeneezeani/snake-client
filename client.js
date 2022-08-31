@@ -5,7 +5,7 @@ const config = {
   port: 50541,
 };
 
-const connect = function () {
+const connect = function() {
   const conn = net.createConnection(config);
   conn.on("data", (data) => {
     console.log("data from server  ", data);
@@ -17,8 +17,9 @@ const connect = function () {
       conn.write('Move: up');
     },1000);
     conn.setEncoding("utf8");
-    return conn;
+    
   });
+  return conn;
 };
 
 module.exports = { connect };
